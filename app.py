@@ -16,8 +16,12 @@ class ChangingStackHolder(Resource):
         result = {}
         data = []
         for item in cursor:
-            data.append(item['stockid'])
+            stock = {}
+            stock['stock_id'] = item['stockid']
+            stock['stock_name'] = item['stock_name']
+            data.append(stock)
         result['stocklist'] = data
+        print(result)
         return result
 
 class StackHodlerDetail(Resource):

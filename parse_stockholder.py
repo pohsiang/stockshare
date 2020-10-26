@@ -3,7 +3,6 @@ from stockdb import PHStockDB
 from pymongo import MongoClient
 import requests
 import pandas as pd
-from timebudget import timebudget
 
 def record_single_stock(stock_index):
     stock = PHStock(stock_index)
@@ -39,7 +38,7 @@ for stockid in stockid_list:
     print("Progress:" + str(index) + "/" + str(total_stockid))
     index = index + 1
 
-    
+
 
 
 

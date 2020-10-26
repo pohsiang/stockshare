@@ -47,7 +47,7 @@ class PHStock:
             print ("who:" + who)
             print ("who_buy_volume:" + who_buy_total_volume[idx])
         print ("========")
-        for idx, who in enumerate(who_sell): 
+        for idx, who in enumerate(who_sell):
             if who is None:
                 break;
             print ("who:" + who)
@@ -61,6 +61,11 @@ class PHStock:
         data = {}
         #ID
         data['stock_id'] = self.stock_id
+        #名稱
+        name = tree.xpath("//div[@class='navbar-inner']//li[@class='dropdown']//ul[@class='dropdown-menu']//a/text()")
+        if not name:
+            return None
+        data['stock_name'] = name[0].split(" ")[1]
         #資料日期
         date_list = tree.xpath("//div[@id='D1']//table//td[3]/text()")
         if not date_list:
@@ -121,12 +126,12 @@ class PHStock:
             return None
 
         return data
-        
+
     def remove_space_in_datalist(self, data_list):
         for idx in range(len(data_list)):
             data_list[idx] = data_list[idx].replace(u'\xa0', u'')
         return data_list
-    
+
     def print_datalist(self, data_list):
         for data in data_list:
             print(data)
