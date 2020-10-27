@@ -7,4 +7,4 @@ class PHAnalysis:
         data_list = list(map(float, data_list))
         return statistics.stdev(data_list)
 
-    
+

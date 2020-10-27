@@ -33,7 +33,10 @@ for stockid in stockid_list:
 
     # Check
     if not stock['percentage_over1000stockholder'] or not stock['percentage_over400stockholder']:
-        print("Empty")
+        print(stockid +":Empty")
+        continue
+    if len(stock['percentage_over1000stockholder']) < 10:
+        print(stockid +":Not Enough data")
         continue
     # All over 1000 sd
     stock_percentage_over1000stockholder = stock['percentage_over1000stockholder']
