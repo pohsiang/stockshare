@@ -47,7 +47,7 @@ for stockid in stockid_list:
 
     # All over 400 sd
     stock_percentage_over400stockholder = stock['percentage_over400stockholder']
-    result_400 = stock_analysis.get_list_sd(get_one_year_data(get_one_year_data(stock_percentage_over400stockholder)))
+    result_400 = stock_analysis.get_list_sd(get_one_year_data(stock_percentage_over400stockholder))
     # One month over 400 sd
     stock_percentage_over400stockholder_one_month = get_one_month_data(stock_percentage_over400stockholder)
     result_400_one_month = stock_analysis.get_list_sd(stock_percentage_over400stockholder_one_month)
